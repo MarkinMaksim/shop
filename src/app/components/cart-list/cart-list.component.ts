@@ -8,11 +8,11 @@ import { ProductModel } from '../models/product-model';
   styleUrls: ['./cart-list.component.css']
 })
 export class CartListComponent implements OnInit {
-  private cartService: CartService;
+  // private cartService: CartService;
 
-  
-  constructor(private service: CartService) {
-    this.cartService = service;
+
+  constructor(private cartService: CartService) {
+    // this.cartService = service;
   }
 
   ngOnInit(): void {
@@ -25,8 +25,8 @@ export class CartListComponent implements OnInit {
   getProductsInCart(): ProductModel[] {
     return this.cartService.getProductsInCart();
   }
-  
+
   trackByMethod(index:number, el:any): number {
-    return el.id;
+    return el.id; // у модели нет этого поля
   }
 }

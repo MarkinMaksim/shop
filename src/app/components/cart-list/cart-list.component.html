@@ -2,7 +2,7 @@
     <ng-container *ngIf="checkProductsInCart(); then thenBlock; else elseBlock"></ng-container>
     <ng-template #thenBlock>'
         <ul class="products" >
-            <li *ngFor="let product of getProductsInCart(); ">
+            <li *ngFor="let product of getProductsInCart(); trackBy: trackByMethod">
                 <span>{{product.name}} : {{product.price}}</span>
             </li>
         </ul></ng-template>
